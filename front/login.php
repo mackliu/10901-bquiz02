@@ -30,7 +30,11 @@ function login(){
             if(res==='1'){
                 $.get("api/chk_pw.php",{acc,pw},function(res){
                     if(res==='1'){
-                        location.href="index.php"
+                        if(acc=='admin'){
+                            location.href="admin.php"
+                        }else{
+                            location.href="index.php"
+                        }
                     }else{
                         alert("密碼錯誤")
                         location.reload();
