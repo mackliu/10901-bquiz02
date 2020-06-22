@@ -139,3 +139,41 @@ function to($url)
 {
     header("location:" . $url);
 }
+
+
+/**判斷瀏灠人次 */
+
+$total=new DB('total');
+$chk=$total->find(['date'=>date("Y-m-d")]);
+if(empty($chk) && empty($_SESSION['visited'])){
+    //沒有今天的資料,也沒有session  今天頭香 需要新增今日資料,
+    $total->save(["date"=>date("Y-m-d"),"total"=>1]);
+    $_SESSION['visited']=1;
+
+}else if(empty($chk) && !empty($_SESSION['visited'])){
+    //沒有今天的資料,但是有session 異常情形..需要新增今日資料
+    $total->save(["date"=>date("Y-m-d"),"total"=>1]);
+
+}else if(!empty($chk) && empty($_SESSION['visited'])){
+    //有今天的資料,沒有session  表示是新來 需要加1
+    $chk['total']++;
+    $total->save($chk);
+    $_SESSION['visited']=1;
+
+}/* else{
+    //有今天的資料,也有session
+} */
+
+/* if(empty($_SESSION['visited'])){
+    if(empty($chk)){
+        //沒有今天的資料
+        $total->save(['date'=>date("Y-m-d"),'total'=>1]);
+
+    }else{
+        //有今天的資料
+        $chk['total']++;
+        $total->save($chk);
+    }
+
+    $_SESSION['visited']=1;
+} */
