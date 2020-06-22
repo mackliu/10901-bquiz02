@@ -5,7 +5,7 @@ session_start();
 class DB
 {
 
-    private $dsn = "mysql:host=localhost;charset=utf8;dbname=db88";
+    private $dsn = "mysql:host=localhost;charset=utf8;dbname=db66";
     private $root = "root";
     private $password = "";
     private $table;
