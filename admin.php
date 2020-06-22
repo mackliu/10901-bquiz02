@@ -28,11 +28,11 @@
         </div>
         <div id="mm">
         	<div class="hal" id="lef">
-					<a class="blo" href="?do=po">分類網誌</a>
-					<a class="blo" href="?do=news">最新文章</a>
-					<a class="blo" href="?do=pop">人氣文章</a>
+				<a class="blo" href="?do=acc">帳號管理</a>
+				<a class="blo" href="?do=po">分類網誌</a>
+				<a class="blo" href="?do=news">最新文章管理</a>
 					<a class="blo" href="?do=know">講座訊息</a>
-					<a class="blo" href="?do=que">問卷調查</a>
+					<a class="blo" href="?do=que">問卷管理</a>
 			</div>
             <div class="hal" id="main">
             	<div>
@@ -64,11 +64,11 @@
                     	<div class="">
 							<?php
 								$do=(!empty($_GET['do']))?$_GET['do']:"main";
-								$file="front/".$do.".php";
+								$file="admin/".$do.".php";
 								if(file_exists($file)){
 									include $file;
 								}else{
-									include "front/main.php";
+									include "admin/main.php";
 								}
 							?>
                 		</div>
