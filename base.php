@@ -160,20 +160,26 @@ if(empty($chk) && empty($_SESSION['visited'])){
     $total->save($chk);
     $_SESSION['visited']=1;
 
-}/* else{
-    //有今天的資料,也有session
-} */
+}
 
-/* if(empty($_SESSION['visited'])){
+/*巢狀判斷的寫法*/
+//先建一個檢查日期用的函式，並且會回傳當天的訪客人數資料
+/* function chkTotal(){
+    global $total;
+    $chk=$total->find(["date"=>date("Y-m-d")]);
     if(empty($chk)){
-        //沒有今天的資料
-        $total->save(['date'=>date("Y-m-d"),'total'=>1]);
-
-    }else{
-        //有今天的資料
-        $chk['total']++;
-        $total->save($chk);
+        $total->save(["date"=>date("Y-m-d"),"total"=>1]);
     }
 
+    return $total->find(["date"=>date("Y-m-d")]);
+}
+
+//利用session來檢查使用者是否為首次來訪的訪客，再套用chkTotal函式來執行日期的檢查，藉此減少重覆程式碼的撰寫
+if(empty($_SESSION['visited'])){
+    $t=chkTotal();
+    $t['total']++;
+    $total->save($t);
     $_SESSION['visited']=1;
+}else{
+    chkTotal();
 } */

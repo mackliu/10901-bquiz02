@@ -16,12 +16,16 @@
 </fieldset>
 <script>
 
+//用ajax來查詢密碼
 function findPw(){
-    //document.querySelector("#acc").value
+
+    //先取得表單上的email值
     let email=$("#email").val();
     if(email==""){
         alert("欄位不可為空白")
     }else{
+
+        //使用ajax的方式將email傳遞給find_pw.php，然後將回應的資料顯示在#result的位置
         $.get("api/find_pw.php",{email},function(res){
             $("#result").html(res)
         })

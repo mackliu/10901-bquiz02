@@ -13,7 +13,7 @@
 <div id="alerr" style="background:rgba(51,51,51,0.8); color:#FFF; min-height:100px; width:300px; position:fixed; display:none; z-index:9999; overflow:auto;">
 	<pre id="ssaa"></pre>
 </div>
-<iframe name="back" style="display:none;"></iframe>
+
 	<div id="all">
     	<div id="title">
 			<?php
@@ -41,6 +41,7 @@
 					</span>
 					<span style="width:18%; display:inline-block;">
 					<?php
+						//利用session來判斷使用者的登入狀態及登入者是否為admin
 						if(!empty($_SESSION['login'])){
 							if($_SESSION['login']=='admin'){
 					?>
