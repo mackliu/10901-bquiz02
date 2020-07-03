@@ -4,7 +4,8 @@
         vertical-align: top;
         margin-top:20px ;
     }
-    .item{
+    .item,
+    .list-item{
         display: block;
         margin:5px 10px;
     }
@@ -20,6 +21,8 @@
 </fieldset>
 <fieldset style="width:75%">
     <legend>文章列表</legend>
+    <div class="list"></div>
+    <div class="text"></div>
 </fieldset>
 
 
@@ -29,8 +32,19 @@ showList(1)
 function showList(type){
     let str=["健康新知","菸害防治","癌症防治","慢性病防治"]
     $("#nav").html(str[type-1])
+    $.get("api/get_list.php",{type},function(list){
+        $(".list").html(list)
+        $(".text").hide()
+        $(".list").show()
+    })
 
 }
 
-
+function showPost(id){
+    $.get("api/get_post.php",{id},function(post){
+        $(".text").html(post)
+        $(".list").hide();
+        $(".text").show();
+    })
+}
 </script>
