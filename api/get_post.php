@@ -8,5 +8,4 @@ $row=$db->find($id);
 
 echo "<pre>".$row['text']."</pre>";
 
-
 ?>
