@@ -1,3 +1,12 @@
+<style>
+.all{
+    display:none;
+}
+.title{
+    background:#eee;
+    cursor:pointer;
+}
+</style>
 <fieldset>
     <legend>目前位置：首頁 > 最新文章區</legend>
 <table>
@@ -19,8 +28,11 @@
     foreach($rows as $row){
 ?>
     <tr>
-        <td><?=$row['title'];?></td>
-        <td><?=mb_substr($row['text'],0,20,'utf8');?> ...</td>
+        <td class="title"><?=$row['title'];?></td>
+        <td>
+            <div class="abbr"><?=mb_substr($row['text'],0,20,'utf8');?> ...</div>
+            <div class="all"><?=nl2br($row['text']);?></div>
+        </td>
         <td></td>
     </tr>
 <?php
@@ -45,3 +57,12 @@ if(($now+1)<=$pages){
 ?>
 </div>
 </fieldset>
+<script>
+$(".title").on("click",function(){
+    $(this).next().children('.abbr').toggle();
+    $(this).next().children('.all').toggle();
+
+})
+
+
+</script>
