@@ -7,7 +7,7 @@ function lo(th,url)
 
 function good(id,type,user)
 {
-
+	$.post("api/good.php",{id,type,user},function(){
 		if(type=="1")
 		{
 			$("#vie"+id).text($("#vie"+id).text()*1+1)
@@ -18,5 +18,8 @@ function good(id,type,user)
 			$("#vie"+id).text($("#vie"+id).text()*1-1)
 			$("#good"+id).text("讚").attr("onclick","good('"+id+"','1','"+user+"')")
 		}
+
+	})
+		
 
 }

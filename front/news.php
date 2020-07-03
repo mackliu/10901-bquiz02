@@ -38,7 +38,7 @@
         if(!empty($_SESSION['login'])){
             $chk=$log->count(['user'=>$_SESSION['login'],'news'=>$row['id']]);
             if($chk>0){
-                echo "<a href=''>收回讚</a>";
+                echo "<a href='#' id='good".$row['id']."' onclick='good(".$row['id'].",2,&#39;".$_SESSION['login']."&#39;)'>收回讚</a>";
             }else{
                 echo "<a href='#' id='good".$row['id']."' onclick='good(".$row['id'].",1,&#39;".$_SESSION['login']."&#39;)'>讚</a>";
             }
