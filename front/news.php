@@ -24,7 +24,7 @@
     $now=(!empty($_GET['p']))?$_GET['p']:1;
     $start=($now-1)*$div;
     $rows=$db->all([]," limit $start,$div");
-
+    $log=new DB('log');
     foreach($rows as $row){
 ?>
     <tr>
@@ -33,7 +33,20 @@
             <div class="abbr"><?=mb_substr($row['text'],0,20,'utf8');?> ...</div>
             <div class="all"><?=nl2br($row['text']);?></div>
         </td>
-        <td></td>
+        <td>
+        <?php
+        if(!empty($_SESSION['login'])){
+            $chk=$log->count(['user'=>$_SESSION['login'],'news'=>$row['id']]);
+            if($chk>0){
+                echo "<a href=''>收回讚</a>";
+            }else{
+                echo "<a href='#' id='good".$row['id']."' onclick='good(".$row['id'].",1,&#39;".$_SESSION['login']."&#39;)'>讚</a>";
+            }
+        }
+
+        ?>
+
+        </td>
     </tr>
 <?php
     }
