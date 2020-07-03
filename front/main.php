@@ -3,22 +3,33 @@
     display:inline-block;
     padding:10px 20px;
     border:1px solid #999;
+    background-color: #ccc;
     margin-left:-5px;
+    cursor:pointer;
 }
 .wrap{
     width:95%;
     padding:5px;
     margin:auto;
 }
+
+.tab{
+    background-color:white;
+    border-bottom:1px solid white;
+    
+}
 .post{
     border:1px solid #999;
     margin-left:-5px;
+    margin-top:-1px;
     padding:10px;
     display:none;
 }
 .active{
     display:block;
 }
+
+
 .post span{
     font-weight:bolder;
     font-size:24px;
@@ -132,6 +143,8 @@
 
 $(".type").on("click",function(){
     let p=$(this).data("id");
+    $(".type").removeClass("tab")
+    $(this).addClass("tab")
     $(".post").removeClass("active")
     $("#p"+p).addClass("active");
 })
