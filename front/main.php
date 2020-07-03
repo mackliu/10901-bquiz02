@@ -16,7 +16,7 @@
 .tab{
     background-color:white;
     border-bottom:1px solid white;
-    
+
 }
 .post{
     border:1px solid #999;
@@ -37,7 +37,7 @@
 </style>
 <div class="wrap">
 
-<div class="type" data-id="1">健康新知</div>
+<div class="type tab" data-id="1">健康新知</div>
 <div class="type" data-id="2">菸害防治</div>
 <div class="type" data-id="3">癌症防治</div>
 <div class="type" data-id="4">慢性病防治</div>
