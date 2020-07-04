@@ -36,11 +36,13 @@
 }
 </style>
 <div class="wrap">
-
+<!--利用data-id屬性值來放入分類的代號-->
 <div class="type tab" data-id="1">健康新知</div>
 <div class="type" data-id="2">菸害防治</div>
 <div class="type" data-id="3">癌症防治</div>
 <div class="type" data-id="4">慢性病防治</div>
+
+<!--在每篇文章中加入id+分類代號做為識別-->
 <div class="post active" id="p1">
 <span>健康新知</span>
 <pre>
@@ -140,12 +142,22 @@
 </div>
 </div>
 <script>
-
+//當任何一個頁籤.type被點擊時
 $(".type").on("click",function(){
+    
+    //取得被點擊的頁籤的分類代號
     let p=$(this).data("id");
+    
+    //先移除所有的.type標籤中的.tab class
     $(".type").removeClass("tab")
+    
+    //在被點擊的頁籤中加入.tab class
     $(this).addClass("tab")
+
+    //先移除所有文章的.active class
     $(".post").removeClass("active")
+
+    //在指定分類代號的文章中加入.active class
     $("#p"+p).addClass("active");
 })
 
