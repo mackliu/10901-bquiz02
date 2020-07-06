@@ -38,7 +38,7 @@
             $start = ($now - 1) * $div;
 
             //取得分頁需要的資料
-            $rows = $db->all([], " order by good desc limit $start,$div");
+            $rows = $db->all(["sh"=>1], " order by good desc limit $start,$div");
 
             //顯示資料內容
             foreach ($rows as $row) {

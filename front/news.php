@@ -29,7 +29,7 @@
     $start=($now-1)*$div;
 
     //取得分頁需要的資料
-    $rows=$db->all([]," limit $start,$div");
+    $rows=$db->all(["sh"=>1]," limit $start,$div");
     
     //顯示資料內容
     foreach($rows as $row){
