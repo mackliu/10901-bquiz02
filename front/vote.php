@@ -1,8 +1,12 @@
 
 <?php
+
+    //取得題目的id
     $q=$_GET['q'];
     $db=new DB('que');
     $subject=$db->find($q);
+
+    //取得題目的所有選項
     $options=$db->all(['parent'=>$q]);
 
 ?>

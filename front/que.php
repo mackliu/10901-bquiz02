@@ -20,6 +20,7 @@
             <td><a href="?do=result&q=<?=$row['id'];?>">結果</a></td>
             <td>
                 <?php
+                    //利用session來判斷使用者的登入狀態,並顯示相應的文字內容或功能
                     if(empty($_SESSION['login'])){
                         echo "請先登入";
                     }else{
