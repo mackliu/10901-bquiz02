@@ -1,7 +1,8 @@
 # 題組二解題步驟
 
-#### 解題影片
-**https://www.youtube.com/watch?v=Va_dv2lOQjc&list=PLL26U2k-yzXvvx18cNrJ8thou7Sa4J1P5**
+#### 解題影片(2020-7-19更新)
+**https://www.youtube.com/watch?v=tMRObqljV_g&list=PLL26U2k-yzXu8WswH50RWxXHkJGxfZ5uf**
+
 
 ## 步驟一：將素材目錄複製到崗位目錄下，確認素材內容與抽題題號一致
 監評長按下倒數計時後，可以先把桌面上素材目錄中的題目素材複製一份到自己的工作目錄下，這時要確認自己複製的題目和抽到的題目是一致的，之後都在工作目錄下來取用相關的素材，這樣比較不容易出錯；在安裝軟體的準備時間裏，也要確認一下電腦桌面中是否有包含了素材這個目錄，並且四個題組的素材都在其中。
