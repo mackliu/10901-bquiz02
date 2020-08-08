@@ -1,7 +1,8 @@
 # 題組二解題步驟
 
 #### 解題影片(2020-7-19更新)
-**https://www.youtube.com/watch?v=tMRObqljV_g&list=PLL26U2k-yzXu8WswH50RWxXHkJGxfZ5uf**
+* **[影片列表](https://www.youtube.com/watch?v=tMRObqljV_g&list=PLL26U2k-yzXu8WswH50RWxXHkJGxfZ5uf)**
+* **[解題影片程式碼](https://github.com/mackliu/10901-bquiz02-v)**
 
 
 ## 步驟一：將素材目錄複製到崗位目錄下，確認素材內容與抽題題號一致
